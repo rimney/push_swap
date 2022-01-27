@@ -1,0 +1,132 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmney <rmneyz@gmail.com>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/26 02:34:45 by rmney             #+#    #+#             */
+/*   Updated: 2022/01/27 02:38:37 by rmney            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+int *ft_insert(int argc, char **argv)
+{
+    int i;
+    int nb;
+    int j;
+    int *tab;
+
+    i = 1;
+    j = 0;
+    tab = malloc(sizeof(int) * argc);
+    while(i < argc)
+    {
+        tab[j] = atoi(argv[i]);
+        i++;
+        j++;
+    }
+    tab[j] = '\0';
+    return(tab);
+}
+
+int    *new_stack(int *stack, int size)
+{
+    int *temp;
+    int i;
+    int j;
+
+    temp = stack;
+    i = 0;
+    j = 1;
+    stack = malloc(sizeof(int) * size);
+    while(i < size)
+    {
+        stack[i] = temp[j];
+        i++;
+        j++;
+    }
+    stack[size] = 0;
+    free(temp);
+    return(stack);    
+}
+
+int    *push(int *stack, int element, int *old_stack, int size)
+{
+    int i;
+    int j;
+
+    i = 0;
+    j = 1;
+    stack = malloc(sizeof(int) * (size + 1));
+    stack[0] = element;
+    while(i < size)
+    {
+        stack[j] = old_stack[i];
+        i++;
+        j++;
+    }
+    stack[size] = 0;
+    return(stack);
+}
+
+void    pb(t_swap *s)
+{
+    int *temp;
+
+    if(!s->stack_b)
+    {
+        s->stack_b = malloc(sizeof(int) * 2);
+        s->stack_b[0] = s->stack_a[0];
+        s->stack_a_size -= 1;
+        s->stack_b_size += 1;
+        s->stack_a = new_stack(s->stack_a, s->stack_a_size);
+        printf("pb\n");
+    }
+    else
+    {
+        s->stack_b_size += 1;
+        s->stack_a_size -= 1;
+        temp = s->stack_b;
+        s->stack_b = push(s->stack_b, s->stack_a[0], s->stack_b, s->stack_b_size);
+        free(temp);
+        s->stack_a = new_stack(s->stack_a, s->stack_a_size);
+        printf("pb\n");
+    }
+}
+
+void    pa(t_swap *s)
+{
+    int *temp;
+
+    s->stack_b_size -= 1;
+    s->stack_a_size += 1;
+    temp = s->stack_a;
+    s->stack_a = push(s->stack_a, s->stack_b[0], s->stack_a, s->stack_a_size);
+    free(temp);
+    s->stack_b = new_stack(s->stack_b, s->stack_b_size);
+    printf("pa\n");
+}
+
+
+int main(int argc, char **argv)
+{
+    t_swap s;
+
+   s.stack_a_size = argc;
+    s.stack_b_size = 0;
+    s.stack_a = ft_insert(argc, argv);
+    pb(&s);
+    pb(&s);
+    pb(&s);
+    pa(&s);
+    int i = 0;
+    while(s.stack_a[i] || s.stack_b[i])
+    {
+        printf("%d  |   %d\n", s.stack_a[i], s.stack_b[i]);
+        i++;
+    }
+    return (0);
+}
