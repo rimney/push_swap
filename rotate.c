@@ -6,7 +6,7 @@
 /*   By: rmney <rmneyz@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 04:27:24 by rmney             #+#    #+#             */
-/*   Updated: 2022/01/18 04:26:35 by rmney            ###   ########.fr       */
+/*   Updated: 2022/01/28 03:06:23 by rmney            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,24 @@ static void ft_rotate(int *tab, int size)
         tab[i - 1] = swap;
         i++;
     }
-    tab[size] = first;
+    tab[size] = 0;
 }
 
-void    ft_ra(int *tab, int size)
+void    ft_ra(t_swap *s)
 {
-    ft_rotate(tab, size);
+    ft_rotate(s->stack_a, s->stack_a_size);
     printf("ra\n");
 }
 
-void    ft_rb(int *tab, int size)
+void    ft_rb(t_swap *s)
 {
-    ft_rotate(tab, size);
+    ft_rotate(s->stack_b, s->stack_b_size);
     printf("rb\n");
 }
 
-void    ft_rr(int *tab1, int *tab2, int size)
+void    ft_rr(t_swap *s)
 {
-    ft_rotate(tab1, size);
-    ft_rotate(tab2, size);
+    ft_rotate(s->stack_a, s->stack_a_size);
+    ft_rotate(s->stack_b, s->stack_b_size);
     printf("rr\n");
 }

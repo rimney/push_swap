@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_is_dup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmney <rmneyz@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 04:15:15 by rmney             #+#    #+#             */
-/*   Updated: 2022/01/28 03:17:23 by rmney            ###   ########.fr       */
+/*   Created: 2022/01/28 02:42:56 by rmney             #+#    #+#             */
+/*   Updated: 2022/01/28 02:43:08 by rmney            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_swap(int *a, int *b)
+int ft_is_not_duplicate(int argc, char **argv)
 {
-    int c;
-
-    c = *a;
-    *a = *b;
-    *b = c;
+    int i = 0;
+    int *array = ft_insert(argc, argv);
+    int *tab = malloc(sizeof(int) * (argc - 1));
+    while(i < argc - 1)
+    {
+        if(tab[array[i]] == 0)
+            tab[array[i]] = 1;
+        else
+        {
+            printf("dup\n");
+            return (0);
+        }
+        i++;
+    }
+    free(tab);
+    free(array);
+    printf("not dup\n");
+    return (1);
 }
-
-void    ft_sa(int *tab)
-{
-    ft_swap(&tab[0], &tab[1]);
-    printf("sa\n");
-}
-
-void    ft_sb(int *tab)
-{
-    ft_swap(&tab[0], &tab[1]);
-    printf("sb\n");
-}
-
-void    ft_ss(int *tab1, int *tab2)
-{
-    ft_sa(tab1);
-    ft_sb(tab2);
-    printf("ss\n");
-}
-

@@ -6,52 +6,14 @@
 /*   By: rmney <rmneyz@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 02:34:45 by rmney             #+#    #+#             */
-/*   Updated: 2022/01/27 02:38:37 by rmney            ###   ########.fr       */
+/*   Updated: 2022/01/28 02:44:33 by rmney            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *ft_insert(int argc, char **argv)
-{
-    int i;
-    int nb;
-    int j;
-    int *tab;
 
-    i = 1;
-    j = 0;
-    tab = malloc(sizeof(int) * argc);
-    while(i < argc)
-    {
-        tab[j] = atoi(argv[i]);
-        i++;
-        j++;
-    }
-    tab[j] = '\0';
-    return(tab);
-}
 
-int    *new_stack(int *stack, int size)
-{
-    int *temp;
-    int i;
-    int j;
-
-    temp = stack;
-    i = 0;
-    j = 1;
-    stack = malloc(sizeof(int) * size);
-    while(i < size)
-    {
-        stack[i] = temp[j];
-        i++;
-        j++;
-    }
-    stack[size] = 0;
-    free(temp);
-    return(stack);    
-}
 
 int    *push(int *stack, int element, int *old_stack, int size)
 {
@@ -72,7 +34,7 @@ int    *push(int *stack, int element, int *old_stack, int size)
     return(stack);
 }
 
-void    pb(t_swap *s)
+void    ft_pb(t_swap *s)
 {
     int *temp;
 
@@ -97,7 +59,7 @@ void    pb(t_swap *s)
     }
 }
 
-void    pa(t_swap *s)
+void    ft_pa(t_swap *s)
 {
     int *temp;
 
@@ -111,22 +73,17 @@ void    pa(t_swap *s)
 }
 
 
-int main(int argc, char **argv)
-{
-    t_swap s;
+// int main(int argc, char **argv)
+// {
+//     t_swap s;
 
-   s.stack_a_size = argc;
-    s.stack_b_size = 0;
-    s.stack_a = ft_insert(argc, argv);
-    pb(&s);
-    pb(&s);
-    pb(&s);
-    pa(&s);
-    int i = 0;
-    while(s.stack_a[i] || s.stack_b[i])
-    {
-        printf("%d  |   %d\n", s.stack_a[i], s.stack_b[i]);
-        i++;
-    }
-    return (0);
-}
+//     s.stack_a_size = argc - 1;
+//     s.stack_b_size = 0;
+//     s.stack_a = ft_insert(argc, argv);
+//     ft_ra(&s);
+//     int i = 0;
+//     int j = 0;
+//     while(s.stack_a[i])
+//         printf("| %d |\n", s.stack_a[i++]);
+//     return (0);
+// }
