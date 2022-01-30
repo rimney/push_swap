@@ -6,7 +6,7 @@
 /*   By: rmney <rmneyz@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 23:37:10 by rmney             #+#    #+#             */
-/*   Updated: 2022/01/28 03:11:41 by rmney            ###   ########.fr       */
+/*   Updated: 2022/01/29 04:08:45 by rmney            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_push
     int *stack_b;
     int stack_a_size;
     int stack_b_size;
+    int stack_a_midpoint;
+    int stack_b_midpoint;
 }   t_swap;
 
 void    ft_pa(t_swap *s);
@@ -40,4 +42,6 @@ int     *new_table(int *tab, int size);
 int    *push(int *stack, int element, int *old_stack, int size);
 int    *new_stack(int *stack, int size);
 int ft_is_not_duplicate(int argc, char **argv);
+int find_midpoint(int *stack, int size);
+
 # endif
