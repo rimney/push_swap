@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   lab.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 10:47:34 by rimney            #+#    #+#             */
-/*   Updated: 2022/01/31 10:47:39 by rimney           ###   ########.fr       */
+/*   Created: 2022/01/31 16:21:08 by rimney            #+#    #+#             */
+/*   Updated: 2022/01/31 16:23:13 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_swap(int *a, int *b)
+int ft_max(int *tab, int len)
 {
-    int c;
+    int i;
+    int max;
 
-    c = *a;
-    *a = *b;
-    *b = c;
+    i = 0;
+    max = tab[i];
+    while(i < len)
+    {
+        if(max < tab[i])
+            max = tab[i];
+        i++;
+    }
+    return (max);
 }
 
-void    ft_sa(int *tab)
+int main(int argc, char **argv)
 {
-    ft_swap(&tab[0], &tab[1]);
-    printf("sa\n");
+    int *tab = ft_insert(argc, argv);
+    int i = 0;
+    while(tab[i])
+        printf("%d\n", tab[i++]);
+    printf(" >> >> %d\n", ft_max(tab, argc - 1));
 }
-
-void    ft_sb(int *tab)
-{
-    ft_swap(&tab[0], &tab[1]);
-    printf("sb\n");
-}
-
-void    ft_ss(int *tab1, int *tab2)
-{
-    ft_sa(tab1);
-    ft_sb(tab2);
-    printf("ss\n");
-}
-

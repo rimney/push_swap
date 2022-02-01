@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmney <rmneyz@gmail.com>                   +#+  +:+       +#+        */
+/*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 02:34:45 by rmney             #+#    #+#             */
-/*   Updated: 2022/01/28 02:44:33 by rmney            ###   ########.fr       */
+/*   Created: 2022/01/31 10:47:15 by rimney            #+#    #+#             */
+/*   Updated: 2022/01/31 11:44:09 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
-
-
 
 
 int    *push(int *stack, int element, int *old_stack, int size)
@@ -45,6 +44,7 @@ void    ft_pb(t_swap *s)
         s->stack_a_size -= 1;
         s->stack_b_size += 1;
         s->stack_a = new_stack(s->stack_a, s->stack_a_size);
+       // s->stack_b[s->stack_b_size] = 0;
         printf("pb\n");
     }
     else
