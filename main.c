@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/01 22:32:43 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/02 13:55:16 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,13 @@ int count_stack_elements(int *tab)
     return (i);
 }
 
-void    ft_send_number_to_top(t_swap *s, int min, int index, int stack_size)
+void    ft_send_number_to_top(t_swap *s, int min)
 {
     while(s->stack_a[0] != min)
     {
         if(min < s->stack_a_midpoint)
             ft_rra(s);
-        else if(min > s->stack_a_midpoint)
+        else
             ft_ra(s);
         if(s->stack_a[0] == min)
         {
@@ -103,20 +103,21 @@ void    ft_sort_medium_numbers(t_swap *s)
 {
     int i;
     int min;
-    int stack_size = s->stack_a_size;
-    min = 0;
+
     i = 0;
-    while(count_stack_elements(s->stack_a) > 0 && s->stack_a[i])
+    min = 0;
+    while(count_stack_elements(s->stack_a) != 1)
     {
+        printf("<< %d >> \n", i);
         min = ft_min(s->stack_a, s->stack_a_size);
         if(s->stack_a[i] == min)
         {
-            ft_send_number_to_top(s, s->stack_a[i], i, stack_size);
+            ft_send_number_to_top(s, min);
             i = 0;
         }
-        i++;
-        printf("%d\n", i);
-     }
+        else
+            i++;
+    }
 }
 
 void    ft_sort_sort_bis_ass_stack(t_swap *s);
@@ -141,7 +142,7 @@ int main(int argc, char **argv)
     while(s.stack_a[i])
         printf("[ %d ]\n", s.stack_a[i++]);
   while(s.stack_b[j])
-       printf("[[ %d ]]\n", s.stack_b[j++]);
+      printf("[[ %d ]]\n", s.stack_b[j++]);
 	printf(" stack A size : >> %d\n" , s.stack_a_size);
 	printf(" stack B size : >> %d\n", s.stack_b_size);
     return (0);
