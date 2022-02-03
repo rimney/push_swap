@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:15 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/03 01:44:18 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/03 15:27:19 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int    *push(int *stack, int element, int *old_stack, int size)
     j = 1;
     stack = malloc(sizeof(int) * (size + 1));
     stack[0] = element;
-    printf("stack = %d\nelement = %d\n", stack[0], element);
     while(i < size)
     {
         stack[j] = old_stack[i];
@@ -56,11 +55,8 @@ void    ft_pb(t_swap *s)
         s->stack_b = push(s->stack_b, s->stack_a[0], s->stack_b, s->stack_b_size);
         free(temp);
         s->stack_a = new_stack(s->stack_a, s->stack_a_size);
-        printf("pbrrrr\n");
+        printf("pb\n");
     }
-    int j = 0;
-    while(j < s->stack_b_size)
-      printf("test : [[ %d ]]\n", s->stack_b[j++]);
 }
 
 void    ft_pa(t_swap *s)
