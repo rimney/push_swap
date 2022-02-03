@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/02 13:55:16 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/03 01:43:04 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,13 @@ void    ft_send_number_to_top(t_swap *s, int min)
     while(s->stack_a[0] != min)
     {
         if(min < s->stack_a_midpoint)
+        {
             ft_rra(s);
+            int j = 0;
+            if (s->stack_b != NULL)
+                while(j < s->stack_b_size)
+                    printf("rrra : [[ %d ]]\n", s->stack_b[j++]);
+        }
         else
             ft_ra(s);
         if(s->stack_a[0] == min)
@@ -108,7 +114,7 @@ void    ft_sort_medium_numbers(t_swap *s)
     min = 0;
     while(count_stack_elements(s->stack_a) != 1)
     {
-        printf("<< %d >> \n", i);
+       // printf("<< %d >> \n", i);
         min = ft_min(s->stack_a, s->stack_a_size);
         if(s->stack_a[i] == min)
         {
@@ -141,7 +147,7 @@ int main(int argc, char **argv)
     push_swap(&s, argc, argv);
     while(s.stack_a[i])
         printf("[ %d ]\n", s.stack_a[i++]);
-  while(s.stack_b[j])
+  while(j < s.stack_b_size)
       printf("[[ %d ]]\n", s.stack_b[j++]);
 	printf(" stack A size : >> %d\n" , s.stack_a_size);
 	printf(" stack B size : >> %d\n", s.stack_b_size);

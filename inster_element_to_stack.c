@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:00 by rimney            #+#    #+#             */
-/*   Updated: 2022/01/31 15:23:21 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/03 01:45:09 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int    *new_stack(int *stack, int size)
     temp = stack;
     i = 0;
     j = 1;
-    stack = malloc(sizeof(int) * size);
+    stack = malloc(sizeof(int) * size + 1);
     while(i < size)
     {
         stack[i] = temp[j];
