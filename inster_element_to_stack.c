@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:00 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/03 01:45:09 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/04 00:55:48 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int *ft_insert(int argc, char **argv)
     tab = malloc(sizeof(int) * argc);
     while(i < argc)
     {
-        tab[j] = ft_atoi(argv[i]);
+        tab[j] = atoi(argv[i]);
         i++;
         j++;
     }
@@ -57,7 +57,7 @@ int *ft_insert(int argc, char **argv)
     return(tab);
 }
 
-int    *new_stack(int *stack, int size)
+int    *new_stack(int *stack, int size)  
 {
     int *temp;
     int i;

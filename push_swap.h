@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmney <rmneyz@gmail.com>                   +#+  +:+       +#+        */
+/*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 23:37:10 by rmney             #+#    #+#             */
-/*   Updated: 2022/01/29 04:08:45 by rmney            ###   ########.fr       */
+/*   Updated: 2022/02/03 22:31:05 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ int    *push(int *stack, int element, int *old_stack, int size);
 int    *new_stack(int *stack, int size);
 int ft_is_not_duplicate(int argc, char **argv);
 int find_midpoint(int *stack, int size);
-
+int ft_min(int *tab, int len);
+void    ft_send_number_to_top(t_swap *s, int min, int index);
+void	ft_sort_3_numbers(t_swap *s);
+void    ft_sort_medium_numbers(t_swap *s);
+int count_stack_elements(int *tab);
 # endif
