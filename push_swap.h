@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 23:37:10 by rmney             #+#    #+#             */
-/*   Updated: 2022/02/03 22:31:05 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/04 15:26:10 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ void    ft_send_number_to_top(t_swap *s, int min, int index);
 void	ft_sort_3_numbers(t_swap *s);
 void    ft_sort_medium_numbers(t_swap *s);
 int count_stack_elements(int *tab);
+void    ft_sort_5_elements_stack(t_swap *s);
 # endif

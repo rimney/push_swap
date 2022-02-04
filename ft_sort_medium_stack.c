@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:25:24 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/04 02:28:27 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/04 16:08:22 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,22 @@ void	ft_sort_3_numbers(t_swap *s)
         ft_ra(s);
 }
 
+int ft_max(int *tab, int len)
+{
+    int i;
+    int max;
+
+    i = 0;
+    max = tab[i];
+    while(i < len)
+    {
+        if(max < tab[i])
+            max = tab[i];
+        i++;
+    }
+    return (max);
+}
+
  void    ft_sort_medium_numbers(t_swap *s)
 {
     int i;
@@ -85,4 +101,33 @@ void	ft_sort_3_numbers(t_swap *s)
             i = 0;
         }
     }
+}
+
+void    ft_sort_5_elements_stack(t_swap *s)
+{
+    int i;
+    int min;
+
+    min = 0;
+    i = 0; 
+    while(s->stack_a[i] && count_stack_elements(s->stack_a) > 3)
+    {
+        min = ft_min(s->stack_a, s->stack_a_size);
+        if(s->stack_a[0] == min)
+        {
+            ft_pb(s);
+            i++;
+        }
+        else if(s->stack_a[i] != min)
+            i++;
+        if(s->stack_a[i] == min)
+        {
+            ft_send_number_to_top(s, min, i);
+            i = 0;
+        }
+    }
+    ft_sort_3_numbers(s);
+    ft_sort_3_numbers(s);
+    ft_pa(s);
+    ft_pa(s);
 }
