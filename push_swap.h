@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -21,8 +22,8 @@ typedef struct s_push
     int *stack_b;
     int stack_a_size;
     int stack_b_size;
+    int stack_a_quarter;
     int stack_a_midpoint;
-    int stack_b_midpoint;
 }   t_swap;
 
 void    ft_pa(t_swap *s);
@@ -43,10 +44,11 @@ int    *push(int *stack, int element, int *old_stack, int size);
 int    *new_stack(int *stack, int size);
 int ft_is_not_duplicate(int argc, char **argv);
 int find_midpoint(int *stack, int size);
-int ft_min(int *tab, int len);
+int     ft_min(int *tab, int len);
 void    ft_send_number_to_top(t_swap *s, int min, int index);
 void	ft_sort_3_numbers(t_swap *s);
 void    ft_sort_medium_numbers(t_swap *s);
-int count_stack_elements(int *tab);
+int     count_stack_elements(int *tab);
 void    ft_sort_5_elements_stack(t_swap *s);
+void    ft_sort_medium_elements_stack(t_swap *s);
 # endif

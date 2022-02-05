@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:00 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/04 00:55:48 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/04 17:58:57 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int ft_atoi(char *str)
         num = num * 10 + str[i] - '0';
         i++;
     }
-    return (num);
+    return (num * sign);
 }
 
 int *ft_insert(int argc, char **argv)

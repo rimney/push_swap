@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:25:24 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/04 16:08:22 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/04 18:13:06 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,15 @@ int ft_max(int *tab, int len)
     }
 }
 
-void    ft_sort_5_elements_stack(t_swap *s)
+void    ft_sort_medium_elements_stack(t_swap *s)
 {
     int i;
     int min;
+    int stack_a_rest;
 
     min = 0;
-    i = 0; 
+    i = 0;
+    stack_a_rest = s->stack_a_size;
     while(s->stack_a[i] && count_stack_elements(s->stack_a) > 3)
     {
         min = ft_min(s->stack_a, s->stack_a_size);
@@ -126,8 +128,9 @@ void    ft_sort_5_elements_stack(t_swap *s)
             i = 0;
         }
     }
-    ft_sort_3_numbers(s);
-    ft_sort_3_numbers(s);
-    ft_pa(s);
-    ft_pa(s);
+    while(stack_a_rest != s->stack_a_size)
+    {
+        ft_sort_3_numbers(s);
+        ft_pa(s);
+    }
 }
