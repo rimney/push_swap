@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/05 23:22:36 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/06 00:48:06 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int  ft_create_midpoints(t_swap *s, int argc, char **argv)
   //i = 0;
   // while(temp_stack[i])
   //   printf("-->%d--<\n", temp_stack[i++]);
+  free(temp_stack);
   return (temp_stack[counter]);
 }
 
@@ -105,6 +106,7 @@ void    ft_sort_sort_bis_ass_stack(t_swap *s, int argc, char **argv)
   int i;
 
   i  = 0;
+  int min;
   int mid_point_holder = ft_create_midpoints(s, argc, argv);
   while(s->stack_a[i])
   {
@@ -118,6 +120,11 @@ void    ft_sort_sort_bis_ass_stack(t_swap *s, int argc, char **argv)
   s->stack_a_quarter -= 1;
 }
 
+// void  ft_set_quarters(t_swap *s)
+// {
+//   if(s->stack_a)
+// }
+
 void    push_swap(t_swap *s, int argc, char **argv)
 {
     int a;
@@ -126,7 +133,7 @@ void    push_swap(t_swap *s, int argc, char **argv)
     a = 0;
     b = 0;
     ft_assign(s, argc, argv);
-    s->stack_a_quarter = 4;
+    s->stack_a_quarter = 5;
     while(s->stack_a_quarter != 0)
       ft_sort_sort_bis_ass_stack(s, argc, argv);
 
@@ -145,6 +152,6 @@ int main(int argc, char **argv)
       printf("[[ %d ]]\n", s.stack_b[j++]);
 	printf(" stack A size : >> %d\n" , s.stack_a_size);
 	printf(" stack B size : >> %d\n", s.stack_b_size);
- // system("leaks a.out");
+  //system("leaks a.out");
     return (0);
 }
