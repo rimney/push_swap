@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:25:24 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/06 18:22:39 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/09 03:42:12 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ void    ft_send_number_to_top_stack_a(t_swap *s, int min, int index)
 {
     while(s->stack_a[0] != min)
     {
-        if(index > s->stack_a_size / 2)
+        if(s->stack_a[0] == 0)
+            ft_pb(s);
+        if(index >= s->stack_a_size / 2)
             ft_rra(s);
         else
             ft_ra(s);
@@ -46,9 +48,11 @@ void    ft_send_number_to_top_stack_a(t_swap *s, int min, int index)
 
 void	ft_sort_3_numbers(t_swap *s)
 {
-   if(s->stack_a[0] < s->stack_a[1] && s->stack_a[0] > s->stack_a[2]) // 2 3 1
+    if(s->stack_a_size == 2 && !is_sorted(s->stack_a, s->stack_a_size))
+        ft_sa(s->stack_a);
+    else if(s->stack_a[0] < s->stack_a[1] && s->stack_a[0] > s->stack_a[2]) // 2 3 1
         ft_rra(s);
-   else  if(s->stack_a[0] > s->stack_a[1] && s->stack_a[1] > s->stack_a[2]) // 3 2 1
+    else  if(s->stack_a[0] > s->stack_a[1] && s->stack_a[1] > s->stack_a[2]) // 3 2 1
     {
         ft_ra(s);
         ft_sa(s->stack_a);
@@ -76,61 +80,4 @@ int ft_max(int *tab, int len)
         i++;
     }
     return (max);
-}
-
- void    ft_sort_medium_numbers(t_swap *s)
-{
-    int i;
-    int min;
-
-    i = 0;
-    min = 0;
-    while(count_stack_elements(s->stack_a) != 1 && s->stack_a[i])
-    {
-        min = ft_min(s->stack_a, s->stack_a_size);
-        if(s->stack_a[0] == min)
-        {
-            ft_pb(s);
-            i++;
-        }
-        else if(s->stack_a[i] != min)
-            i++;
-        if(s->stack_a[i] == min)
-        {
-            ft_send_number_to_top_stack_a(s, min, i);
-            i = 0;
-        }
-    }
-}
-
-void    ft_sort_medium_elements_stack(t_swap *s)
-{
-    int i;
-    int min;
-    int stack_a_rest;
-
-    min = 0;
-    i = 0;
-    stack_a_rest = s->stack_a_size;
-    while(s->stack_a[i] && count_stack_elements(s->stack_a) > 3)
-    {
-        min = ft_min(s->stack_a, s->stack_a_size);
-        if(s->stack_a[0] == min)
-        {
-            ft_pb(s);
-            i++;
-        }
-        else if(s->stack_a[i] != min)
-            i++;
-        if(s->stack_a[i] == min)
-        {
-            ft_send_number_to_top_stack_a(s, min, i);
-            i = 0;
-        }
-    }
-    while(stack_a_rest != s->stack_a_size)
-    {
-        ft_sort_3_numbers(s);
-        ft_pa(s);
-    }
 }

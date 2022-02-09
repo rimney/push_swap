@@ -42,7 +42,7 @@ int *ft_insert(int argc, char **argv);
 int     *new_table(int *tab, int size);
 int    *push(int *stack, int element, int *old_stack, int size);
 int    *new_stack(int *stack, int size);
-int ft_is_not_duplicate(int argc, char **argv);
+int ft_is_not_duplicate(int *stack, int size);
 int find_midpoint(int *stack, int size);
 int     ft_min(int *tab, int len);
 void    ft_send_number_to_top_stack_a(t_swap *s, int min, int index);
@@ -53,4 +53,7 @@ int     count_stack_elements(int *tab);
 void    ft_sort_5_elements_stack(t_swap *s);
 void    ft_sort_medium_elements_stack(t_swap *s);
 int ft_max(int *tab, int len);
+int is_sorted(int *tab, int size);
+int is_digit(char *str);
+int check_digit(int argc, char **argv);
 # endif

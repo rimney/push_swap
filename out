@@ -1,90 +1,10 @@
-51 >>>
-ra
-ra
-ra
+25 MID << 
 ra
 ra
 ra
 ra
 ra
 pb
-ra
-pb
-ra
-pb
-ra
-pb
-ra
-pb
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-pb
-ra
-pb
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-pb
-ra
-pb
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-pb
-ra
 ra
 ra
 pb
@@ -103,22 +23,12 @@ pb
 ra
 ra
 ra
-ra
+pb
 ra
 ra
 ra
 pb
 ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-pb
 ra
 ra
 ra
@@ -132,31 +42,6 @@ pb
 ra
 pb
 ra
-pb
-ra
-pb
-ra
-ra
-ra
-pb
-ra
-pb
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
-ra
-pb
-ra
-ra
-ra
-ra
-ra
-ra
 ra
 ra
 pb
@@ -165,7 +50,65 @@ ra
 pb
 ra
 ra
+ra
+ra
 pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
 ra
 ra
 ra
@@ -187,6 +130,12 @@ ra
 ra
 ra
 ra
+pb
+43 MID << 
+ra
+ra
+ra
+ra
 ra
 ra
 ra
@@ -195,105 +144,841 @@ ra
 ra
 ra
 pb
-[ 86 ]
-[ 98 ]
-[ 83 ]
-[ 91 ]
-[ 53 ]
-[ 56 ]
-[ 94 ]
-[ 85 ]
-[ 77 ]
-[ 84 ]
-[ 78 ]
-[ 64 ]
-[ 67 ]
-[ 90 ]
-[ 88 ]
-[ 95 ]
-[ 82 ]
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+57 MID << 
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+67 MID << 
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+rra
+rra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+rra
+pb
+rra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+rra
+rra
+rra
+rra
+rra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+rra
+rra
+pb
+rra
+rra
+rra
+rra
+rra
+pb
+rra
+rra
+rra
+rra
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+rra
+rra
+rra
+rra
+pb
+pb
+pb
+rra
+rra
+pb
+ra
+pb
+rra
+rra
+rra
+pb
+rra
+rra
+pb
+rra
+rra
+rra
+pb
+pb
+rra
+rra
+pb
+pb
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+pa
+rrb
+pa
+rrb
+pa
+rrb
+pa
+rrb
+pa
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+pa
+pa
+rrb
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+rb
+rb
+rb
+pa
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+rb
+rb
+pa
+pa
+rrb
+rrb
+rrb
+pa
+rrb
+pa
+rb
+pa
+pa
+rrb
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+rb
+pa
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+rb
+pa
+rrb
+pa
+rrb
+pa
+rb
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+pa
+pa
+rrb
+pa
+rrb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+rrb
+rrb
+pa
+rb
+pa
+rb
+rb
+rb
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+rb
+rb
+rb
+rb
+pa
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+pa
+rb
+pa
+rb
+rb
+rb
+pa
+rrb
+pa
+rb
+rb
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+rrb
+pa
+rrb
+pa
+rb
+pa
+rb
+rb
+pa
+rb
+rb
+pa
+rb
+pa
+rb
+rb
+pa
+pa
+rb
+pa
+pa
+[ 0 ]
+[ 1 ]
+[ 2 ]
+[ 3 ]
+[ 4 ]
+[ 5 ]
+[ 6 ]
+[ 7 ]
+[ 8 ]
+[ 9 ]
+[ 10 ]
+[ 11 ]
+[ 12 ]
+[ 13 ]
+[ 14 ]
+[ 15 ]
+[ 16 ]
+[ 17 ]
+[ 18 ]
+[ 19 ]
+[ 20 ]
+[ 21 ]
+[ 22 ]
+[ 23 ]
+[ 24 ]
+[ 25 ]
+[ 26 ]
+[ 27 ]
+[ 28 ]
+[ 29 ]
+[ 30 ]
+[ 31 ]
+[ 32 ]
+[ 33 ]
+[ 34 ]
+[ 35 ]
+[ 36 ]
+[ 37 ]
+[ 38 ]
+[ 39 ]
+[ 40 ]
+[ 41 ]
+[ 42 ]
+[ 43 ]
+[ 44 ]
+[ 45 ]
+[ 46 ]
+[ 47 ]
+[ 48 ]
+[ 49 ]
+[ 50 ]
 [ 51 ]
-[ 100 ]
-[ 63 ]
-[ 69 ]
-[ 75 ]
-[ 93 ]
-[ 54 ]
 [ 52 ]
-[ 57 ]
-[ 92 ]
-[ 61 ]
-[ 59 ]
-[ 80 ]
-[ 79 ]
-[ 62 ]
-[ 76 ]
-[ 60 ]
-[ 87 ]
-[ 73 ]
+[ 53 ]
+[ 54 ]
 [ 55 ]
-[ 96 ]
-[ 65 ]
+[ 56 ]
+[ 57 ]
 [ 58 ]
-[ 74 ]
+[ 59 ]
+[ 60 ]
+[ 61 ]
+[ 62 ]
+[ 63 ]
+[ 64 ]
+[ 65 ]
 [ 66 ]
-[ 70 ]
+[ 67 ]
 [ 68 ]
-[ 97 ]
-[ 99 ]
-[ 89 ]
-[ 81 ]
-[ 72 ]
+[ 69 ]
+[ 70 ]
 [ 71 ]
-[[ 19 ]]
-[[ 50 ]]
-[[ 38 ]]
-[[ 20 ]]
-[[ 26 ]]
-[[ 30 ]]
-[[ 47 ]]
-[[ 44 ]]
-[[ 22 ]]
-[[ 28 ]]
-[[ 42 ]]
-[[ 14 ]]
-[[ 32 ]]
-[[ 24 ]]
-[[ 17 ]]
-[[ 13 ]]
-[[ 39 ]]
-[[ 7 ]]
-[[ 41 ]]
-[[ 2 ]]
-[[ 12 ]]
-[[ 34 ]]
-[[ 40 ]]
-[[ 37 ]]
-[[ 46 ]]
-[[ 29 ]]
-[[ 31 ]]
-[[ 10 ]]
-[[ 25 ]]
-[[ 49 ]]
-[[ 6 ]]
-[[ 15 ]]
-[[ 45 ]]
-[[ 33 ]]
-[[ 3 ]]
-[[ 1 ]]
-[[ 48 ]]
-[[ 43 ]]
-[[ 8 ]]
-[[ 27 ]]
-[[ 5 ]]
-[[ 18 ]]
-[[ 36 ]]
-[[ 16 ]]
-[[ 35 ]]
-[[ 11 ]]
-[[ 23 ]]
-[[ 9 ]]
-[[ 4 ]]
-[[ 21 ]]
- stack A size : >> 50
- stack B size : >> 50
+[ 72 ]
+[ 73 ]
+[ 74 ]
+[ 75 ]
+[ 76 ]
+[ 77 ]
+[ 78 ]
+[ 79 ]
+[ 80 ]
+[ 81 ]
+[ 82 ]
+[ 83 ]
+[ 84 ]
+[ 85 ]
+[ 86 ]
+[ 87 ]
+[ 88 ]
+[ 89 ]
+[ 90 ]
+[ 92 ]
+[ 93 ]
+[ 94 ]
+[ 95 ]
+[ 96 ]
+[ 97 ]
+[ 98 ]
+[ 99 ]
+[ 100 ]
+ stack A size : >> 100
+ stack B size : >> 0
+MID: 24

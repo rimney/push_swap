@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_midpoint.c                                    :+:      :+:    :+:   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:46:44 by rimney            #+#    #+#             */
-/*   Updated: 2022/01/31 10:46:47 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/07 21:12:41 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,4 @@ static void    ft_sort_int_tab(int *tab, int size)
         else
             i++;
     }
-}
-
-int find_midpoint(int *stack, int size)
-{
-    int midpoint;
-    ft_sort_int_tab(stack, size);
-    midpoint = stack[size / 2];
-    return (midpoint);
 }

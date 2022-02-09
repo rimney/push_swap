@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/07 03:37:21 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/09 03:55:48 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void  ft_set_quarters(t_swap *s)
   if(s->stack_a_size < 100)
     s->stack_a_quarter = 2;
   else if(s->stack_a_size >= 100 && s->stack_a_size < 500)
-    s->stack_a_quarter = 2;
+    s->stack_a_quarter = 5;
   else if(s->stack_a_size >= 500)
     s->stack_a_quarter = 10;
 }
@@ -48,15 +48,17 @@ int is_sorted(int *tab, int size)
   return (1);
 }
 
-int count_stack_elements(int *tab)
-{
-    int i;
+// int count_stack_elements(int *tab)
+// {
+//     int i;
 
-    i = 0;
-    while(tab[i])
-        i++;
-    return (i);
-}
+//     i = 0;
+//     while(tab[i])
+//     {
+//       i++;
+//     }
+//     return (i);
+// }
 
 int *ft_copy_stack_elements(t_swap *s)
 {
@@ -102,9 +104,9 @@ int  ft_create_midpoints(t_swap *s, int argc, char **argv)
   temp_stack = ft_copy_stack_elements(s);
   ft_sort_int_tab(temp_stack, s->stack_a_size);
   counter = s->stack_a_size / s->stack_a_quarter;
+  s->stack_a_midpoint = temp_stack[s->stack_a_size];
   free(temp_stack);
-  printf("%d >>>\n", temp_stack[counter]);
-  return (temp_stack[counter]);
+  return (temp_stack[s->stack_a_size / 4]);
 }
 
 void    ft_send_number_to_top_stack_b(t_swap *s, int max, int index)
@@ -130,7 +132,8 @@ void    ft_sort_bis_ass_stack(t_swap *s, int argc, char **argv)
 
   i = 0;
   mid_point_holder = ft_create_midpoints(s, argc, argv);
-  while(s->stack_a[i])
+  printf("%d MID << \n", mid_point_holder);
+  while(i < s->stack_a_size)
   {
     if(s->stack_a[i] < mid_point_holder)
     {
@@ -149,7 +152,7 @@ void  ft_2nd_step_sort_big_ass_stack(t_swap *s)
 
   i = 0;
   min = 0;
-  while(count_stack_elements(s->stack_a) != 1 && s->stack_a[i])
+  while(s->stack_a_size >= 1 && s->stack_a[i])
   {
     min = ft_min(s->stack_a, s->stack_a_size);
     if(s->stack_a[0] == min)
@@ -159,7 +162,7 @@ void  ft_2nd_step_sort_big_ass_stack(t_swap *s)
     }
     else if(s->stack_a[i] != min)
         i++;
-    if(s->stack_a[i] == min)
+    else if(s->stack_a[i] == min)
     {
         ft_send_number_to_top_stack_a(s, min, i);
         i = 0;
@@ -174,7 +177,7 @@ void  ft_3nd_step_sort_big_ass_stack(t_swap *s)
 
   i = 0;
   max = 0;
-  while(count_stack_elements(s->stack_b) != 1 && s->stack_b[i])
+  while(s->stack_b_size >= 1 && i < s->stack_b_size)
   {
     max = ft_max(s->stack_b, s->stack_b_size);
     if(s->stack_b[0] == max)
@@ -184,7 +187,7 @@ void  ft_3nd_step_sort_big_ass_stack(t_swap *s)
     }
     else if(s->stack_b[i] != max)
         i++;
-    if(s->stack_b[i] == max)
+    else if(s->stack_b[i] == max)
     {
         ft_send_number_to_top_stack_b(s, max, i);
         i = 0;
@@ -192,18 +195,60 @@ void  ft_3nd_step_sort_big_ass_stack(t_swap *s)
   }
 }
 
+void  ft_sort_5_elements_stack(t_swap *s)
+{
+  int i;
+  int min;
+
+  i = 0;
+  min = 0;
+  while(i < s->stack_a_size && s->stack_a_size > 3)
+  {
+    min = ft_min(s->stack_a, s->stack_a_size);
+   if(s->stack_a[0] == min)
+    {
+      ft_pb(s);
+      i++;
+    }
+    else if(s->stack_a[i] != min)
+      i++;
+    else if(s->stack_a[i] == min)
+    {
+      ft_send_number_to_top_stack_a(s, min, i);
+      i = 0;
+    }
+  }
+  if(s->stack_a_size == 3)
+    ft_sort_3_numbers(s);
+  while(s->stack_b_size)
+    ft_pa(s);
+}
 
 
 void    push_swap(t_swap *s, int argc, char **argv)
 {
     int stack_a_save = s->stack_a_size;
 
-    while(s->stack_a_quarter != 1)
+    if(s->stack_a_size <= 3)
     {
-      ft_sort_bis_ass_stack(s, argc, argv);
-      s->stack_a_quarter -= 1;
+      while(!is_sorted(s->stack_a, s->stack_a_size))
+        ft_sort_3_numbers(s);
     }
-
+     else if(s->stack_a_size > 3 && s->stack_a_size <= 5)
+        ft_sort_5_elements_stack(s); 
+    else if(s->stack_a_size > 5)
+    {
+      while(s->stack_a_quarter != 1)
+      {
+        ft_sort_bis_ass_stack(s, argc, argv);
+        s->stack_a_quarter -= 1;
+      }
+      ft_2nd_step_sort_big_ass_stack(s);
+      while(s->stack_a_size + 1 < stack_a_save)
+        ft_3nd_step_sort_big_ass_stack(s);
+      if(s->stack_a_size == stack_a_save - 1)
+        ft_pa(s);
+    }
 }
 
 int main(int argc, char **argv)
@@ -212,13 +257,20 @@ int main(int argc, char **argv)
     int i = 0;
     int j = 0;
     ft_assign(&s, argc, argv);
+    // if(!ft_is_not_duplicate(s.stack_a, s.stack_a_size) || !check_digit(argc, argv))
+    // {
+    //   printf("Error\n");
+    //   return (0);
+    // }
+  //  if(s.stack_a_size == 1 || is_sorted(s.stack_a, s.stack_a_size))
+  //    return (0);
     push_swap(&s, argc, argv);
-    while(s.stack_a[i])
-        printf("[ %d ]\n", s.stack_a[i++]);
-  while(j < s.stack_b_size)
-      printf("[[ %d ]]\n", s.stack_b[j++]);
-	printf(" stack A size : >> %d\n" , s.stack_a_size);
-	printf(" stack B size : >> %d\n", s.stack_b_size);
-  //system("leaks a.out");
+      while(i < s.stack_a_size)
+         printf("[ %d ]\n", s.stack_a[i++]);
+    while(j < s.stack_b_size)
+       printf("[[ %d ]]\n", s.stack_b[j++]);
+	  printf(" stack A size : >> %d\n" , s.stack_a_size);
+	  printf(" stack B size : >> %d\n", s.stack_b_size);
+    printf("MID: %d\n", s.stack_a_midpoint);
     return (0);
 }

@@ -1,35 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_dup.c                                        :+:      :+:    :+:   */
+/*   basic_tests.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:46:52 by rimney            #+#    #+#             */
-/*   Updated: 2022/01/31 10:46:54 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/09 02:31:43 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_not_duplicate(int argc, char **argv)
+int ft_is_not_duplicate(int *stack, int size)
 {
-    int i = 0;
-    int *array = ft_insert(argc, argv);
-    int *tab = malloc(sizeof(int) * (argc - 1));
-    while(i < argc - 1)
+    int i;
+    int j;
+
+    i = 0;
+    while(i < size)
     {
-        if(tab[array[i]] == 0)
-            tab[array[i]] = 1;
-        else
+        j = i + 1;
+        while(j < size)
         {
-            printf("dup\n");
-            return (0);
+            if(stack[i] == stack[j])
+                return (0);
+            j++;
         }
         i++;
     }
-    free(tab);
-    free(array);
-    printf("not dup\n");
+    return (1);
+}
+
+int is_digit(char *str)
+{
+    int i;
+
+    i = 0;
+    while(str[i])
+    {
+        if(!((str[i] >= '0' && str[i] <= '9' )|| (str[i] == '-')))
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+int check_digit(int argc, char **argv)
+{
+    int i;
+
+    i = 1;
+    while (i < argc)
+    {
+        if(!is_digit(argv[i]))
+            return (0);
+        i++;
+    }
     return (1);
 }
