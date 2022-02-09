@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/09 17:49:14 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/09 19:01:29 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,6 @@ int is_sorted(int *tab, int size)
   }
   return (1);
 }
-
-// int count_stack_elements(int *tab)
-// {
-//     int i;
-
-//     i = 0;
-//     while(tab[i])
-//     {
-//       i++;
-//     }
-//     return (i);
-// }
 
 int *ft_copy_stack_elements(t_swap *s)
 {
@@ -237,9 +225,9 @@ void    push_swap(t_swap *s, int argc, char **argv)
       while(!is_sorted(s->stack_a, s->stack_a_size))
         ft_sort_3_numbers(s);
     }
-     else if(s->stack_a_size > 3 && s->stack_a_size <= 5)
+     else if(s->stack_a_size > 3 && s->stack_a_size < 10)
         ft_sort_5_elements_stack(s); 
-    else if(s->stack_a_size > 5)
+    else if(s->stack_a_size > 10)
     {
       while(s->stack_a_quarter != 1)
       {
