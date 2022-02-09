@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/09 03:55:48 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/09 17:49:14 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int  ft_create_midpoints(t_swap *s, int argc, char **argv)
   counter = s->stack_a_size / s->stack_a_quarter;
   s->stack_a_midpoint = temp_stack[s->stack_a_size];
   free(temp_stack);
-  return (temp_stack[s->stack_a_size / 4]);
+  return (temp_stack[counter]);
 }
 
 void    ft_send_number_to_top_stack_b(t_swap *s, int max, int index)
@@ -219,9 +219,12 @@ void  ft_sort_5_elements_stack(t_swap *s)
     }
   }
   if(s->stack_a_size == 3)
-    ft_sort_3_numbers(s);
-  while(s->stack_b_size)
+  {
+    while(!is_sorted(s->stack_a, s->stack_a_size))
+     ft_sort_3_numbers(s);
+    while(s->stack_b_size)
     ft_pa(s);
+  }
 }
 
 
