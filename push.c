@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:15 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/07 21:12:32 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/10 15:53:00 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int    *push(int *stack, int element, int *old_stack, int size)
         i++;
         j++;
     }
-    stack[size] = 0;
     return(stack);
 }
 
@@ -39,7 +38,7 @@ void    ft_pb(t_swap *s)
 
     if(!s->stack_b)
     {
-        s->stack_b = malloc(sizeof(int) * 2);
+        s->stack_b = malloc(sizeof(int));
         s->stack_b[0] = s->stack_a[0];
         s->stack_a_size -= 1;
         s->stack_b_size += 1;

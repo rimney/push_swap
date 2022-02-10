@@ -28,13 +28,13 @@ typedef struct s_push
 
 void    ft_pa(t_swap *s);
 void    ft_pb(t_swap *s);
-void    ft_sa(int *tab);
-void    ft_sb(int *tab);
+void    ft_sa(t_swap *s);
+void    ft_sb(t_swap *s);
 void    ft_ra(t_swap *s);
 void    ft_rb(t_swap *s);
 void    ft_rra(t_swap *s);
 void    ft_rrb(t_swap *s);
-void    ft_ss(int *tab1, int *tab2);
+void    ft_ss(t_swap *s);
 void    ft_rrr(t_swap *s);
 void    ft_rr(t_swap *s);
 void    ft_putstr(char *str);
@@ -56,4 +56,7 @@ int ft_max(int *tab, int len);
 int is_sorted(int *tab, int size);
 int is_digit(char *str);
 int check_digit(int argc, char **argv);
+int ft_check_int_min_max(int argc, char **argv);
+int ft_atoi(char *str);
+long ft_atol(char *str);
 # endif

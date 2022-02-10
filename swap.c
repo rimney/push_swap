@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:34 by rimney            #+#    #+#             */
-/*   Updated: 2022/01/31 10:47:39 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/10 04:39:05 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 static void ft_swap(int *a, int *b)
 {
-    int c;
+    int *c;
 
-    c = *a;
+    *c = *a;
     *a = *b;
-    *b = c;
+    *b = *c;
 }
 
-void    ft_sa(int *tab)
+void    ft_sa(t_swap *s)
 {
-    ft_swap(&tab[0], &tab[1]);
+    ft_swap(&s->stack_a[0], &s->stack_a[1]);
     printf("sa\n");
 }
 
-void    ft_sb(int *tab)
+void    ft_sb(t_swap *s)
 {
-    ft_swap(&tab[0], &tab[1]);
+    ft_swap(&s->stack_b[0], &s->stack_b[1]);
     printf("sb\n");
 }
 
-void    ft_ss(int *tab1, int *tab2)
+void    ft_ss(t_swap *s)
 {
-    ft_sa(tab1);
-    ft_sb(tab2);
+    ft_sa(s);
+    ft_sb(s);
     printf("ss\n");
 }
 

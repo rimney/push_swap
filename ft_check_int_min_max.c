@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inster_element_to_stack.c                          :+:      :+:    :+:   */
+/*   ft_check_int_min_max.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 10:47:00 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/10 03:23:24 by rimney           ###   ########.fr       */
+/*   Created: 2022/02/10 03:08:54 by rimney            #+#    #+#             */
+/*   Updated: 2022/02/10 03:16:45 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_atoi(char *str)
+long ft_atol(char *str)
 {
     int i;
-    int num;
+    long num;
     int sign;
 
     i = 0;
@@ -37,42 +37,20 @@ int ft_atoi(char *str)
     return (num * sign);
 }
 
-int *ft_insert(int argc, char **argv)
+int ft_check_int_min_max(int argc, char **argv)
 {
     int i;
-    int j;
-    int *tab;
 
     i = 1;
-    j = 0;
-    tab = malloc(sizeof(int) * argc);
     while(i < argc)
     {
-        tab[j] = ft_atoi(argv[i]);
+        if(ft_atol(argv[i]) > 2147483647)
+        {
+            printf("gi\n");
+            return (0);
+        }
         i++;
-        j++;
-    }
-    tab[j] = 0;
-    return(tab);
+    }  
+    return (1);
 }
 
-int    *new_stack(int *stack, int size)  
-{
-    int *temp;
-    int i;
-    int j;
-
-    temp = stack;
-    i = 0;
-    j = 1;
-    stack = malloc(sizeof(int) * size + 1);
-    while(i < size)
-    {
-        stack[i] = temp[j];
-        i++;
-        j++;
-    }
-    stack[size] = 0;
-    free(temp);
-    return(stack);    
-}
