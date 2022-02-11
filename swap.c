@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:34 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/10 04:39:05 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/10 23:47:11 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 static void ft_swap(int *a, int *b)
 {
-    int *c;
+    int c;
 
-    *c = *a;
+    c = *a;
     *a = *b;
-    *b = *c;
+    *b = c;
 }
 
 void    ft_sa(t_swap *s)

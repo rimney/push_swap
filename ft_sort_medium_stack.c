@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:25:24 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/10 18:50:16 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/10 23:49:40 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,15 @@ int ft_max(int *tab, int len)
 
 void    ft_send_number_to_top_stack_a(t_swap *s, int min, int index)
 {
+    if(s->stack_a[1] == min)
+    {
+        ft_sa(s);
+        ft_pb(s);
+        return ;
+    }
     while(s->stack_a[0] != min)
     {
-        if(s->stack_a[0] == 0 && s->stack_a_size < 3)
+        if(s->stack_a[0] == min && s->stack_a_size < 3)
             ft_pb(s);
         if(index >= s->stack_a_size / 2)
             ft_rra(s);
@@ -65,6 +71,12 @@ void    ft_send_number_to_top_stack_a(t_swap *s, int min, int index)
 
 void    ft_send_number_to_top_stack_b(t_swap *s, int max, int index)
 {
+    if(s->stack_b[1] == max)
+    {
+        ft_sb(s);
+        ft_pa(s);
+        return ;
+    }
     while(s->stack_b[0] != max)
     {
         if(index > s->stack_b_size / 2)

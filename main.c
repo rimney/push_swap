@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/10 18:56:22 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 00:48:24 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,7 +253,7 @@ void  ft_sort_medium_stack(t_swap *s)
   {
     i = 0;
     while(!is_sorted(s->stack_a, s->stack_a_size))
-    ft_sort_3_numbers(s);
+      ft_sort_3_numbers(s);
     while(s->stack_b_size)
     {
       max = ft_max(s->stack_b, s->stack_b_size);
@@ -273,7 +273,12 @@ void    push_swap(t_swap *s, int argc, char **argv) // Good
 {
     int stack_a_save = s->stack_a_size;
 
-    if(s->stack_a_size > 3 && s->stack_a_size < 50)
+    if(s->stack_a_size <= 3)
+    {
+      while(!is_sorted(s->stack_a, s->stack_a_size))
+      ft_sort_3_numbers(s);
+    }
+    else if(s->stack_a_size > 3 && s->stack_a_size < 50)
       ft_sort_medium_stack(s);
     else if(s->stack_a_size >= 50)
     {
@@ -296,21 +301,21 @@ int main(int argc, char **argv)
     int i = 0;
     int j = 0;
     ft_assign(&s, argc, argv);
-    if(!ft_is_not_duplicate(s.stack_a, s.stack_a_size) || !check_digit(argc, argv))
+    if(!ft_is_not_duplicate(s.stack_a, s.stack_a_size) || !check_digit(argc, argv) || !ft_check_int_min_max(argc, argv))
     {
       printf("Error\n");
       return (0);
     }
-  //  if(s.stack_a_size == 1 || is_sorted(s.stack_a, s.stack_a_size))
-  //    return (0);
+   if(s.stack_a_size == 1 || is_sorted(s.stack_a, s.stack_a_size))
+     return (0);
       push_swap(&s, argc, argv);
-      while(i < s.stack_a_size)
-         printf("[ %d ]\n", s.stack_a[i++]);
-    while(j < s.stack_b_size)
-       printf("[[ %d ]]\n", s.stack_b[j++]);
-	  printf(" stack A size : >> %d\n" , s.stack_a_size);
-	  printf(" stack B size : >> %d\n", s.stack_b_size);
-    if(is_sorted(s.stack_a, s.stack_a_size) == 1)
-      printf("SORTED !!");
+    //   while(i < s.stack_a_size)
+    //      printf("[ %d ]\n", s.stack_a[i++]);
+    // while(j < s.stack_b_size)
+    //    printf("[[ %d ]]\n", s.stack_b[j++]);
+	  // printf(" stack A size : >> %d\n" , s.stack_a_size);
+	  // printf(" stack B size : >> %d\n", s.stack_b_size);
+    // if(is_sorted(s.stack_a, s.stack_a_size) == 1)
+    //   printf("SORTED !!");
     return (0);
 }

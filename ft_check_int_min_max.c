@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 03:08:54 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/10 03:16:45 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 00:33:39 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,8 @@ int ft_check_int_min_max(int argc, char **argv)
     i = 1;
     while(i < argc)
     {
-        if(ft_atol(argv[i]) > 2147483647)
-        {
-            printf("gi\n");
+        if(ft_atol(argv[i]) > 2147483647 || ft_atol(argv[i]) < -2147483648)
             return (0);
-        }
         i++;
     }  
     return (1);
