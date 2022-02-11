@@ -6,66 +6,66 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:15 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/10 15:53:00 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 04:14:11 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-
-int    *push(int *stack, int element, int *old_stack, int size)
+int	*push(int *stack, int element, int *old_stack, int size)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 1;
-    stack = malloc(sizeof(int) * (size + 1));
-    stack[0] = element;
-    while(i < size)
-    {
-        stack[j] = old_stack[i];
-        i++;
-        j++;
-    }
-    return(stack);
+	i = 0;
+	j = 1;
+	stack = malloc(sizeof(int) * (size + 1));
+	stack[0] = element;
+	while (i < size)
+	{
+		stack[j] = old_stack[i];
+		i++;
+		j++;
+	}
+	return (stack);
 }
 
-void    ft_pb(t_swap *s)
+void	ft_pb(t_swap *s)
 {
-    int *temp;
+	int	*temp;
 
-    if(!s->stack_b)
-    {
-        s->stack_b = malloc(sizeof(int));
-        s->stack_b[0] = s->stack_a[0];
-        s->stack_a_size -= 1;
-        s->stack_b_size += 1;
-        s->stack_a = new_stack(s->stack_a, s->stack_a_size);
-        printf("pb\n");
-    }
-    else
-    {
-        s->stack_b_size += 1;
-        s->stack_a_size -= 1;
-        temp = s->stack_b;
-        s->stack_b = push(s->stack_b, s->stack_a[0], s->stack_b, s->stack_b_size);
-        free(temp);
-        s->stack_a = new_stack(s->stack_a, s->stack_a_size);
-        printf("pb\n");
-    }
+	if (!s->stack_b)
+	{
+		s->stack_b = malloc(sizeof(int));
+		s->stack_b[0] = s->stack_a[0];
+		s->stack_a_size -= 1;
+		s->stack_b_size += 1;
+		s->stack_a = new_stack(s->stack_a, s->stack_a_size);
+		ft_print("pb\n");
+	}
+	else
+	{
+		s->stack_b_size += 1;
+		s->stack_a_size -= 1;
+		temp = s->stack_b;
+		s->stack_b = push(s->stack_b, s->stack_a[0],
+				s->stack_b, s->stack_b_size);
+		free(temp);
+		s->stack_a = new_stack(s->stack_a, s->stack_a_size);
+		ft_print("pb\n");
+	}
 }
 
-void    ft_pa(t_swap *s)
+void	ft_pa(t_swap *s)
 {
-    int *temp;
+	int	*temp;
 
-    s->stack_b_size -= 1;
-    s->stack_a_size += 1;
-    temp = s->stack_a;
-    s->stack_a = push(s->stack_a, s->stack_b[0], s->stack_a, s->stack_a_size);
-    free(temp);
-    s->stack_b = new_stack(s->stack_b, s->stack_b_size);
-    printf("pa\n");
+	s->stack_b_size -= 1;
+	s->stack_a_size += 1;
+	temp = s->stack_a;
+	s->stack_a = push(s->stack_a, s->stack_b[0],
+			s->stack_a, s->stack_a_size);
+	free(temp);
+	s->stack_b = new_stack(s->stack_b, s->stack_b_size);
+	ft_print("pa\n");
 }

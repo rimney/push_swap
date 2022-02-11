@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:34 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/10 23:47:11 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 04:09:41 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ static void ft_swap(int *a, int *b)
 void    ft_sa(t_swap *s)
 {
     ft_swap(&s->stack_a[0], &s->stack_a[1]);
-    printf("sa\n");
+    ft_print("sa\n");
 }
 
 void    ft_sb(t_swap *s)
 {
     ft_swap(&s->stack_b[0], &s->stack_b[1]);
-    printf("sb\n");
+    ft_print("sb\n");
 }
 
 void    ft_ss(t_swap *s)
 {
     ft_sa(s);
     ft_sb(s);
-    printf("ss\n");
+    ft_print("ss\n");
 }
 

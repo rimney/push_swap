@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:29 by rimney            #+#    #+#             */
-/*   Updated: 2022/01/31 10:47:31 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 04:29:13 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ static void ft_rotate(int *tab, int size)
 void    ft_ra(t_swap *s)
 {
     ft_rotate(s->stack_a, s->stack_a_size);
-    printf("ra\n");
+    ft_print("ra\n");
 }
 
 void    ft_rb(t_swap *s)
 {
     ft_rotate(s->stack_b, s->stack_b_size);
-    printf("rb\n");
+    ft_print("rb\n");
 }
 
 void    ft_rr(t_swap *s)
 {
     ft_rotate(s->stack_a, s->stack_a_size);
     ft_rotate(s->stack_b, s->stack_b_size);
-    printf("rr\n");
+    ft_print("rr\n");
 }

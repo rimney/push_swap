@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   assist_functions01.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 10:46:44 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/07 21:12:41 by rimney           ###   ########.fr       */
+/*   Created: 2022/02/11 01:50:02 by rimney            #+#    #+#             */
+/*   Updated: 2022/02/11 03:38:19 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void    ft_sort_int_tab(int *tab, int size)
+int	ft_min(int *tab, int len)
 {
-    int i;
-    int rev;
+	int	i;
+	int	max;
 
-    i = 1;
-    while(i < size)
-    {
-        if(tab[i] < tab[i - 1])
-        {
-            rev = tab[i];
-            tab[i] = tab[i - 1];
-            tab[i - 1] = rev;
-            i = 1;
-        }
-        else
-            i++;
-    }
+	i = 0;
+	max = tab[i];
+	while (i < len)
+	{
+		if (max > tab[i])
+			max = tab[i];
+		i++;
+	}
+	return (max);
+}
+
+int	ft_max(int *tab, int len)
+{
+	int	i;
+	int	max;
+
+	i = 0;
+	max = tab[i];
+	while (i < len)
+	{
+		if (max < tab[i])
+			max = tab[i];
+		i++;
+	}
+	return (max);
 }
