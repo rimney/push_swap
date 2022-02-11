@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 01:40:46 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 03:31:21 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 17:36:41 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	ft_set_quarters(t_swap *s)
 
 void	ft_assign(t_swap *s, int argc, char **argv)
 {
-	int	*mid_copy;
-
 	s->stack_a = ft_insert(argc, argv);
 	s->stack_a_size = argc - 1;
 	s->stack_b_size = 0;
@@ -33,9 +31,8 @@ void	ft_assign(t_swap *s, int argc, char **argv)
 	ft_set_quarters(s);
 }
 
-int	ft_create_midpoints(t_swap *s, int argc, char **argv)
+int	ft_create_midpoints(t_swap *s)
 {
-	int	i;
 	int	*temp_stack;
 	int	counter;
 

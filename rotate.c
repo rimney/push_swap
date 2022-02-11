@@ -6,9 +6,11 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:29 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 04:44:36 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 17:42:19 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 static void	ft_rotate(int *tab, int size)
 {

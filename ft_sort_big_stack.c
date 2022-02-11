@@ -6,19 +6,19 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 02:56:11 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 03:45:50 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 17:40:51 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_big_stack_step_one(t_swap *s, int argc, char **argv)
+void	ft_sort_big_stack_step_one(t_swap *s)
 {
 	int	i;
 	int	mid_point_holder;
 
 	i = 0;
-	mid_point_holder = ft_create_midpoints(s, argc, argv);
+	mid_point_holder = ft_create_midpoints(s);
 	while (i < s->stack_a_size)
 	{
 		if (s->stack_a[i] < mid_point_holder)

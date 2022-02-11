@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 04:19:42 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 04:25:50 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 17:41:25 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	ft_sort_medium_stack_step_one(t_swap *s);
 int		ft_is_not_duplicate(int *stack, int size);
 int		ft_check_int_min_max(int argc, char **argv);
 void	ft_assign(t_swap *s, int argc, char **argv);
-int		ft_create_midpoints(t_swap *s, int argc, char **argv);
+int		ft_create_midpoints(t_swap *s);
 int		*push(int *stack, int element, int *old_stack, int size);
 void	ft_send_number_to_top_stack_b(t_swap *s, int max, int index);
 void	ft_send_number_to_top_stack_a(t_swap *s, int min, int index);
-void	ft_sort_big_stack_step_one(t_swap *s, int argc, char **argv);
+void    ft_sort_big_stack_step_one(t_swap *s);
 #endif

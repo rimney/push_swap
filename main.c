@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 04:10:52 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/11 17:44:01 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_print(char *str)
 		write(1, &str[i++], 1);
 }
 
-void	push_swap(t_swap *s, int argc, char **argv)
+void	push_swap(t_swap *s)
 {
 	int	stack_a_save;
 
@@ -37,7 +37,7 @@ void	push_swap(t_swap *s, int argc, char **argv)
 	{
 		while (s->stack_a_quarter != 1)
 		{
-			ft_sort_big_stack_step_one(s, argc, argv);
+			ft_sort_big_stack_step_one(s);
 			s->stack_a_quarter -= 1;
 		}
 		ft_sort_big_stack_step_two(s);
@@ -62,6 +62,6 @@ int	main(int argc, char **argv)
 	}
 	if (s.stack_a_size == 1 || is_sorted(s.stack_a, s.stack_a_size))
 		return (0);
-	push_swap(&s, argc, argv);
+	push_swap(&s);
 	return (0);
 }
