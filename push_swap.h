@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 04:19:42 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 20:42:40 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 01:25:48 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ typedef struct s_push
 	int	stack_a_midpoint;
 }	t_swap;
 
-void	ft_pa(t_swap *s);
-void	ft_pb(t_swap *s);
-void	ft_sa(t_swap *s);
-void	ft_sb(t_swap *s);
-void	ft_ra(t_swap *s);
-void	ft_rb(t_swap *s);
-void	ft_rra(t_swap *s);
-void	ft_rrb(t_swap *s);
-void	ft_ss(t_swap *s);
-void	ft_rrr(t_swap *s);
-void	ft_rr(t_swap *s);
+void	ft_pa(t_swap *s, int flag);
+void	ft_pb(t_swap *s, int flag);
+void	ft_sa(t_swap *s, int flag);
+void	ft_sb(t_swap *s, int flag);
+void	ft_ra(t_swap *s, int flag);
+void	ft_rb(t_swap *s, int flag);
+void	ft_rra(t_swap *s, int flag);
+void	ft_rrb(t_swap *s, int flag);
+void	ft_ss(t_swap *s, int flag);
+void	ft_rrr(t_swap *s, int flag);
+void	ft_rr(t_swap *s, int flag);
 int		ft_atoi(char *str);
 long	ft_atol(char *str);
 int		is_digit(char *str);
@@ -70,4 +70,7 @@ int		*push(int *stack, int element, int *old_stack, int size);
 void	ft_send_number_to_top_stack_b(t_swap *s, int max, int index);
 void	ft_send_number_to_top_stack_a(t_swap *s, int min, int index);
 void	ft_sort_big_stack_step_one(t_swap *s);
+int		ft_apply_instructions(t_swap *s, char *instruction);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_get_instructions(t_swap *s, int fd);
 #endif

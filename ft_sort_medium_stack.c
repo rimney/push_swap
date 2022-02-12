@@ -6,7 +6,7 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:25:24 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 03:51:59 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 00:24:57 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 void	ft_sort_3_numbers(t_swap *s)
 {
 	if (s->stack_a_size == 2 && !is_sorted(s->stack_a, s->stack_a_size))
-		ft_sa(s);
+		ft_sa(s, 1);
 	else if (s->stack_a[0] < s->stack_a[1]
 		&& s->stack_a[0] > s->stack_a[2])
-		ft_rra(s);
+		ft_rra(s, 1);
 	else if (s->stack_a[0] > s->stack_a[1]
 		&& s->stack_a[1] > s->stack_a[2])
 	{
-		ft_ra(s);
-		ft_sa(s);
+		ft_ra(s, 1);
+		ft_sa(s, 1);
 	}
 	else if (s->stack_a[0] < s->stack_a[1]
 		&& s->stack_a[1] > s->stack_a[2])
 	{
-		ft_rra(s);
-		ft_sa(s);
+		ft_rra(s, 1);
+		ft_sa(s, 1);
 	}
 	else if (s->stack_a[0] > s->stack_a[1]
 		&& s->stack_a[1] < s->stack_a[2])
-		ft_ra(s);
+		ft_ra(s, 1);
 }
 
 void	ft_sort_medium_stack_step_one(t_swap *s)
@@ -46,7 +46,7 @@ void	ft_sort_medium_stack_step_one(t_swap *s)
 	{
 		min = ft_min(s->stack_a, s->stack_a_size);
 		if (s->stack_a[0] == min)
-			ft_pb(s);
+			ft_pb(s, 1);
 		else if (s->stack_a[i] != min)
 			i++;
 		else if (s->stack_a[i] == min)
@@ -71,7 +71,7 @@ void	ft_sort_medium_stack_step_two(t_swap *s)
 		{
 			max = ft_max(s->stack_b, s->stack_b_size);
 			if (s->stack_b[0] == max)
-				ft_pa(s);
+				ft_pa(s, 1);
 			else if (s->stack_b[i] != max)
 				i++;
 			else if (s->stack_b[i] == max)

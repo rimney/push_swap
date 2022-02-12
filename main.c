@@ -6,20 +6,11 @@
 /*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:08 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 17:44:01 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 00:25:29 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_print(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
-}
 
 void	push_swap(t_swap *s)
 {
@@ -44,7 +35,7 @@ void	push_swap(t_swap *s)
 		while (s->stack_a_size + 1 < stack_a_save)
 			ft_sort_big_stack_step_three(s);
 		if (s->stack_a_size == stack_a_save - 1)
-			ft_pa(s);
+			ft_pa(s, 1);
 	}
 }
 
