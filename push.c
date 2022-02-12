@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rimney < rimney@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:15 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 04:14:11 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 02:13:19 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	*push(int *stack, int element, int *old_stack, int size)
 	return (stack);
 }
 
-void	ft_pb(t_swap *s)
+void	ft_pb(t_swap *s, int flag)
 {
 	int	*temp;
 
@@ -41,7 +41,8 @@ void	ft_pb(t_swap *s)
 		s->stack_a_size -= 1;
 		s->stack_b_size += 1;
 		s->stack_a = new_stack(s->stack_a, s->stack_a_size);
-		ft_print("pb\n");
+		if (flag == 1)
+			ft_print("pb\n");
 	}
 	else
 	{
@@ -52,11 +53,12 @@ void	ft_pb(t_swap *s)
 				s->stack_b, s->stack_b_size);
 		free(temp);
 		s->stack_a = new_stack(s->stack_a, s->stack_a_size);
-		ft_print("pb\n");
+		if (flag == 1)	
+			ft_print("pb\n");
 	}
 }
 
-void	ft_pa(t_swap *s)
+void	ft_pa(t_swap *s, int flag)
 {
 	int	*temp;
 
@@ -67,5 +69,6 @@ void	ft_pa(t_swap *s)
 			s->stack_a, s->stack_a_size);
 	free(temp);
 	s->stack_b = new_stack(s->stack_b, s->stack_b_size);
-	ft_print("pa\n");
+	if (flag == 1)
+		ft_print("pa\n");
 }

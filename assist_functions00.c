@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assist_functions00.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rimney < rimney@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 01:07:36 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 03:36:55 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 02:14:40 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ void	ft_send_number_to_top_stack_a(t_swap *s, int min, int index)
 {
 	if (s->stack_a[1] == min)
 	{
-		ft_sa(s);
-		ft_pb(s);
+		ft_sa(s, 1);
+		ft_pb(s, 1);
 		return ;
 	}
 	while (s->stack_a[0] != min)
 	{
 		if (s->stack_a[0] == min && s->stack_a_size < 3)
-			ft_pb(s);
+			ft_pb(s, 1);
 		if (index >= s->stack_a_size / 2)
-			ft_rra(s);
+			ft_rra(s, 1);
 		else
-			ft_ra(s);
+			ft_ra(s, 1);
 		if (s->stack_a[0] == min)
 		{
-			ft_pb(s);
+			ft_pb(s, 1);
 			return ;
 		}
 	}
@@ -40,19 +40,19 @@ void	ft_send_number_to_top_stack_b(t_swap *s, int max, int index)
 {
 	if (s->stack_b[1] == max)
 	{
-		ft_sb(s);
-		ft_pa(s);
+		ft_sb(s, 1);
+		ft_pa(s, 1);
 		return ;
 	}
 	while (s->stack_b[0] != max)
 	{
 		if (index > s->stack_b_size / 2)
-			ft_rrb(s);
+			ft_rrb(s, 1);
 		else
-			ft_rb(s);
+			ft_rb(s, 1);
 		if (s->stack_b[0] == max)
 		{
-			ft_pa(s);
+			ft_pa(s, 1);
 			return ;
 		}
 	}

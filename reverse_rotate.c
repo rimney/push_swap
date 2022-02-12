@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rimney < rimney@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:22 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 04:28:58 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 02:18:11 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,18 @@ static void	reverse_rotate(int *tab, int size)
 	}
 }
 
-void	ft_rra(t_swap *s)
+void	ft_rra(t_swap *s, int flag)
 {
 	reverse_rotate(s->stack_a, s->stack_a_size);
-	ft_print("rra\n");
+	if (flag == 1)
+		ft_print("rra\n");
 }
 
-void	ft_rrb(t_swap *s)
+void	ft_rrb(t_swap *s, int flag)
 {
 	reverse_rotate(s->stack_b, s->stack_b_size);
-	ft_print("rrb\n");
+	if (flag == 1)
+		ft_print("rrb\n");
 }
 
 void	ft_rrr(t_swap *s)

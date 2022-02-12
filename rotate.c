@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rimney < rimney@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 10:47:29 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/11 17:42:19 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 02:11:39 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@ static void	ft_rotate(int *tab, int size)
 	tab[size] = 0;
 }
 
-void	ft_ra(t_swap *s)
+void	ft_ra(t_swap *s, int flag)
 {
 	ft_rotate(s->stack_a, s->stack_a_size);
-	ft_print("ra\n");
+	if (flag == 1)
+		ft_print("ra\n");
 }
 
-void	ft_rb(t_swap *s)
+void	ft_rb(t_swap *s, int flag)
 {
 	ft_rotate(s->stack_b, s->stack_b_size);
-	ft_print("rb\n");
+	if (flag == 1)
+		ft_print("rb\n");
 }
 
 void	ft_rr(t_swap *s)

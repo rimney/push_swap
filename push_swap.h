@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rimney <rimney@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rimney < rimney@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 04:19:42 by rimney            #+#    #+#             */
-/*   Updated: 2022/02/12 01:25:48 by rimney           ###   ########.fr       */
+/*   Updated: 2022/02/12 02:32:03 by rimney           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
 typedef struct s_push
 {
 	int	*stack_a;
@@ -35,17 +34,19 @@ void	ft_rb(t_swap *s, int flag);
 void	ft_rra(t_swap *s, int flag);
 void	ft_rrb(t_swap *s, int flag);
 void	ft_ss(t_swap *s, int flag);
-void	ft_rrr(t_swap *s, int flag);
-void	ft_rr(t_swap *s, int flag);
+void	ft_rrr(t_swap *s);
+void	ft_rr(t_swap *s);
 int		ft_atoi(char *str);
 long	ft_atol(char *str);
 int		is_digit(char *str);
 void	ft_print(char *str);
 void	ft_putstr(char *str);
+
 int		ft_min(int *tab, int len);
 int		ft_max(int *tab, int len);
 void	ft_sort_3_numbers(t_swap *s);
 int		is_sorted(int *tab, int size);
+void	ft_print(char *str);
 int		*new_table(int *tab, int size);
 int		count_stack_elements(int *tab);
 void	ft_sort_medium_stack(t_swap *s);
@@ -69,8 +70,5 @@ int		ft_create_midpoints(t_swap *s);
 int		*push(int *stack, int element, int *old_stack, int size);
 void	ft_send_number_to_top_stack_b(t_swap *s, int max, int index);
 void	ft_send_number_to_top_stack_a(t_swap *s, int min, int index);
-void	ft_sort_big_stack_step_one(t_swap *s);
-int		ft_apply_instructions(t_swap *s, char *instruction);
-int		ft_strcmp(char *s1, char *s2);
-int		ft_get_instructions(t_swap *s, int fd);
+void    ft_sort_big_stack_step_one(t_swap *s);
 #endif
